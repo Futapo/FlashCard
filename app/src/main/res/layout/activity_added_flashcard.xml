@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".added_flashcard">
+
+
+
+
+
+
+    //cancel button on the new activity
+    <ImageView
+        android:id="@+id/cancel_button"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/cancel_image"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:id="@+id/saveButton"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/save_button"
+        android:layout_alignParentBottom="true"
+
+        />
+    //text box for question and answer
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/Text_Question"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:hint="Question"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="538dp"
+        />
+
+    <EditText
+        android:id="@+id/Text_Answer"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="200dp"
+
+        android:layout_marginBottom="169dp"
+        android:hint="Answer"
+        android:inputType="textMultiLine" />
+
+
+</RelativeLayout>

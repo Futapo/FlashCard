@@ -19,7 +19,7 @@
 
         />
 
-//Flashcard Answer
+    //Flashcard Answer
     <TextView
         android:id="@+id/Flash_Answer"
         android:layout_width="match_parent"
@@ -32,7 +32,20 @@
         android:gravity="center"
         android:background="#FF1A40"
         android:visibility="invisible"
-    />
+        />
+    //Add A new flashcard
+
+    <ImageView
+        android:id="@+id/add_Flash"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/plus_image"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+
 
 
 </RelativeLayout>
