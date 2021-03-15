@@ -3,7 +3,7 @@ Andre's_flashcard_app
 ## Lab 2
 
 ### App Description
-`TODO://` Add app description
+`TODO://` can create a new flashcard and also use a Button for cancelling and saving a new flashcard
 
 ### App Walk-though
 
