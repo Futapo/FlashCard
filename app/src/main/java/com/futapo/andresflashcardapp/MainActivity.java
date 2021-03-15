@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,16 +41,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Add Button
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, added_flashcard.class);
+                intent.putExtra("flashKeyQ", ((TextView) findViewById(R.id.Flash_Question)).getText().toString());
+                intent.putExtra("flashKeyA", ((TextView) findViewById(R.id.Flash_Answer)).getText().toString());
                 MainActivity.this.startActivityForResult(intent, 100);
+
             }
         });
-
-
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -57,20 +62,17 @@ public class MainActivity extends AppCompatActivity {
             String string1 = data.getExtras().getString("new_Question"); //Pulls newQuestion and prints to screen when saved.
             String string2 = data.getExtras().getString("new_Answer");
 
+
             ((TextView) findViewById(R.id.Flash_Question)).setText(string1);
             ((TextView) findViewById(R.id.Flash_Answer)).setText(string2);
 
-
-
-
-
-
-
+            Snackbar.make(findViewById(R.id.Flash_Question),
+                    "The message to display",
+                    Snackbar.LENGTH_SHORT)
+                    .show();
         }
 
+
+
     }
-
-
-
 }
-
