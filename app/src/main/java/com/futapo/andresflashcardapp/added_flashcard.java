@@ -16,16 +16,16 @@ public class added_flashcard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_added_flashcard);
 
-        String Q = getIntent().getStringExtra("flashKeyQ"); // this string will be 'harry potter`
-        String A = getIntent().getStringExtra("flashKeyA"); // this string will be 'voldemort'
 
         // cancel button
-        ImageView Cancelbutton = findViewById(R.id.cancel_button);
-        Cancelbutton.setOnClickListener(new View.OnClickListener() {
+        ImageView CancelButton = findViewById(R.id.cancel_button);
+        CancelButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(added_flashcard.this, MainActivity.class);
+                added_flashcard.this.startActivity(intent);
                 finish();
 
 
@@ -39,17 +39,29 @@ public class added_flashcard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent data = new Intent(); // create a new Intent, this is where we will put our data
-                data.putExtra("new_Question", ((EditText) findViewById(R.id.Text_Question)).getText().toString());
-                data.putExtra("new_Answer", ((EditText) findViewById(R.id.Text_Answer)).getText().toString()); // Text_Answer is changed unto the card
-                setResult(RESULT_OK, data);
+
+
+                Intent data = new Intent(added_flashcard.this, MainActivity.class); // create a new Intent, this is where we will put our data
+                data.putExtra("new_Question", ((EditText) findViewById(R.id.Text_Question)).getText().toString()); // puts one string into the Intent, with the key as 'string1'
+                data.putExtra("new_Answer", ((EditText) findViewById(R.id.Text_Answer)).getText().toString()); // puts another string into the Intent, with the key as 'string2
+                setResult(RESULT_OK, data); // set result code and bundle data for response
+                 // closes this activity and pass data to the original activity that launched this activity
                 finish();
 
 
             }
         });
 
+        //
+
+
+
+
 
     }
+
+
+
+
 
 }
