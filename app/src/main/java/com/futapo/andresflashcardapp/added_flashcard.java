@@ -44,7 +44,8 @@ public class added_flashcard extends AppCompatActivity {
                 Intent data = new Intent(added_flashcard.this, MainActivity.class); // create a new Intent, this is where we will put our data
                 data.putExtra("new_Question", ((EditText) findViewById(R.id.Text_Question)).getText().toString()); // puts one string into the Intent, with the key as 'string1'
                 data.putExtra("new_Answer", ((EditText) findViewById(R.id.Text_Answer)).getText().toString()); // puts another string into the Intent, with the key as 'string2
-                setResult(RESULT_OK, data); // set result code and bundle data for response
+              // set result code and bundle data for response
+                setResult(RESULT_OK, data);
                  // closes this activity and pass data to the original activity that launched this activity
                 finish();
 
